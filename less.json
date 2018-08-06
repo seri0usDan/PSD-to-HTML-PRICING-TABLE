@@ -1,0 +1,8 @@
+{
+  "options" : {
+    "some.less" : {
+       css: "css/main.css",
+       minify: false
+    }
+  }
+}
