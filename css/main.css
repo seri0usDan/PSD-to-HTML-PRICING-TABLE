@@ -4,10 +4,13 @@
   box-sizing: border-box;
 }
 body {
+  min-width: 1500px;
+}
+body {
   font-family: 'Maven Pro', sans-serif;
 }
 .wrapper {
-  width: 95%;
+  width: 1500px;
   margin: 0 auto;
 }
 a {
@@ -24,6 +27,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 .header::after {
   content: "";
@@ -32,8 +36,8 @@ li {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0
-		left: 0;
+  bottom: 0;
+  left: 0;
   background: url(../images/bg.png) no-repeat;
   background-position: 50% 70%;
   background-size: cover;
@@ -69,6 +73,7 @@ li {
   display: block;
   padding: 15px 27px 18px 27px;
   margin-top: 15px;
+  white-space: nowrap;
   transition: 0.3s;
 }
 .main-header nav ul li a:hover {
@@ -83,6 +88,7 @@ li {
   margin-left: 30px;
   color: #ffffff;
   margin-top: 13px;
+  outline: none;
 }
 .main-header button:hover {
   cursor: pointer;
@@ -255,7 +261,7 @@ li {
   margin-bottom: 120px;
 }
 .plan .plans-container .plan-card {
-  width: 440px;
+  min-width: 440px;
   border-radius: 30px;
   background-color: #ffffff;
 }
