@@ -68,7 +68,7 @@ li {
 		display: flex;
 		
 		& li {
-			& a {
+			& a.nav-link {
 				color: #ffffff;
 				font-size: 16px;
 				font-weight: 500;
@@ -77,14 +77,25 @@ li {
 				padding: 15px 27px 18px 27px;
 				margin-top: 15px;
 				white-space: nowrap;
-				&:hover {
-					border-bottom: 2px solid #FFF;
-				}	transition: 0.3s;
+				position: relative;
+				&:before {
+					position: absolute;
+					content: "";
+					height: 2px;
+					width: 0%;
+					top: 100%;
+					left: 50%;
+					background: #FFF;
+				}
+				&:hover::before {
+					left: 0;
+					width: 100%;
+					transition: .2s ease;
+				}	
 			}
 		}
 	}
-
-	& button {
+	& .nav-button {
 		width: 150px;
 		height: 50px;
 		border-radius: 25px;
@@ -94,6 +105,11 @@ li {
 		color: #ffffff;
 		margin-top: 13px;
 		outline: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+		font-weight: bold;
 		&:hover {
 			cursor: pointer;
 			background: #FFF;
@@ -181,6 +197,10 @@ li {
 		position: absolute;
 		bottom: 0;
 		left: calc(50% - 32px);
+		&:hover {
+			box-shadow: 0 0 19px 2px rgba(204, 204, 223, 0.5);
+			transition: .2s;
+		}
 		&img {
 			width: 14px;
 			height: 16px;
@@ -399,7 +419,7 @@ footer {
 		display: flex;
 		
 		& li {
-			& a {
+			& a.nav-link {
 				color: #37374a;
 				font-size: 16px;
 				font-weight: 500;
@@ -413,12 +433,32 @@ footer {
 			}
 		}
 	}
-
-	& button.button {
+	& .nav-button {
 		margin: 0;
 		margin-top: 16px;
 		margin-left: 33px;
 		width: 150px;
+		height: 50px;
+		box-shadow: 0 0 19px 2px rgba(204, 204, 223, 0.5);
+		border-radius: 25px;
+		border: 1px solid #d7dbe8;
+		background: #FFF;
+		color: #c2c9db;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.6px;
+		outline: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		line-height: 1;
+		&:hover {
+			background-color: #6e45e2;
+			color: #FFF;
+			cursor: pointer;
+			transition: 0.3s;
+		}
 	}
 	& h1 {
 		text-transform: uppercase;
@@ -440,12 +480,13 @@ footer {
 			& a {
 				display: inline-block;
 				margin-left: 16px;
-			}
-			& i {
 				color: #b5b5bb;
 				font-size: 16px;
+				&:hover {
+					color: #37374a;
+					transition: .2s;
+				}
 			}
 		}
 	}
-	
 }

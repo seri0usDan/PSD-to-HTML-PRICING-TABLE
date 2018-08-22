@@ -65,7 +65,7 @@ li {
   height: 100%;
   display: flex;
 }
-.main-header nav ul li a {
+.main-header nav ul li a.nav-link {
   color: #ffffff;
   font-size: 16px;
   font-weight: 500;
@@ -74,12 +74,23 @@ li {
   padding: 15px 27px 18px 27px;
   margin-top: 15px;
   white-space: nowrap;
-  transition: 0.3s;
+  position: relative;
 }
-.main-header nav ul li a:hover {
-  border-bottom: 2px solid #FFF;
+.main-header nav ul li a.nav-link:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0%;
+  top: 100%;
+  left: 50%;
+  background: #FFF;
 }
-.main-header button {
+.main-header nav ul li a.nav-link:hover::before {
+  left: 0;
+  width: 100%;
+  transition: 0.2s ease;
+}
+.main-header .nav-button {
   width: 150px;
   height: 50px;
   border-radius: 25px;
@@ -89,8 +100,13 @@ li {
   color: #ffffff;
   margin-top: 13px;
   outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
 }
-.main-header button:hover {
+.main-header .nav-button:hover {
   cursor: pointer;
   background: #FFF;
   color: #756edc;
@@ -171,6 +187,10 @@ li {
   position: absolute;
   bottom: 0;
   left: calc(50% - 32px);
+}
+.down-arrow:hover {
+  box-shadow: 0 0 19px 2px rgba(204, 204, 223, 0.5);
+  transition: 0.2s;
 }
 .down-arrowimg {
   width: 14px;
@@ -376,7 +396,7 @@ footer nav ul {
   height: 100%;
   display: flex;
 }
-footer nav ul li a {
+footer nav ul li a.nav-link {
   color: #37374a;
   font-size: 16px;
   font-weight: 500;
@@ -386,14 +406,35 @@ footer nav ul li a {
   margin-top: 15px;
   transition: 0.3s;
 }
-footer nav ul li a:hover {
+footer nav ul li a.nav-link:hover {
   color: #756edc;
 }
-footer button.button {
+footer .nav-button {
   margin: 0;
   margin-top: 16px;
   margin-left: 33px;
   width: 150px;
+  height: 50px;
+  box-shadow: 0 0 19px 2px rgba(204, 204, 223, 0.5);
+  border-radius: 25px;
+  border: 1px solid #d7dbe8;
+  background: #FFF;
+  color: #c2c9db;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+footer .nav-button:hover {
+  background-color: #6e45e2;
+  color: #FFF;
+  cursor: pointer;
+  transition: 0.3s;
 }
 footer h1 {
   font-size: 30px;
@@ -415,8 +456,10 @@ footer .footer-content .social-links {
 footer .footer-content .social-links a {
   display: inline-block;
   margin-left: 16px;
-}
-footer .footer-content .social-links i {
   color: #b5b5bb;
   font-size: 16px;
+}
+footer .footer-content .social-links a:hover {
+  color: #37374a;
+  transition: 0.2s;
 }
