@@ -3,7 +3,7 @@ PSD to HTML practice, "Pricing Table" site markup.
 
 Technology used: HTML5 CSS JQuery Less
 
-Watch online at: (https://seri0usdan.github.io/PSD-to-HTML-PRICING-TABLE/)
+Watch online @ https://thedanielras.github.io/PSD-to-HTML-PRICING-TABLE/
 
 ![Pricing Table][logo]
 
